@@ -37,7 +37,7 @@ class TvListNotifier extends ChangeNotifier {
   final GetPopularTv getPopularTv;
   final GetTopRatedTv getTopRatedTv;
 
-  Future<void> fetchOnAirTvSeries() async {
+  Future<void> fetchOnAirTv() async {
     _onAirState = RequestState.Loading;
     notifyListeners();
 
@@ -56,7 +56,7 @@ class TvListNotifier extends ChangeNotifier {
     );
   }
 
-  Future<void> fetchPopularTvSeries() async {
+  Future<void> fetchPopularTv() async {
     _popularTvSeriesState = RequestState.Loading;
     notifyListeners();
 
@@ -75,7 +75,7 @@ class TvListNotifier extends ChangeNotifier {
     );
   }
 
-  Future<void> fetchTopRatedTvSeries() async {
+  Future<void> fetchTopRatedTv() async {
     _topRatedTvSeriesState = RequestState.Loading;
     notifyListeners();
 
