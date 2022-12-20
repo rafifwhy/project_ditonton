@@ -24,3 +24,7 @@ class DatabaseFailure extends Failure {
 class CacheFailure extends Failure {
   CacheFailure(String message) : super(message);
 }
+
+class SslFailure extends Failure {
+  SslFailure(String message) : super(message);
+}
