@@ -34,33 +34,38 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> with RouteAware {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Consumer<TvWatchlistNotifier>(
-        builder: (context, data, child) {
-          if (data.watchlistTvState == RequestState.Loading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          } else if (data.watchlistTvState == RequestState.Loaded) {
-            return ListView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                final tv = data.watchlistTv[index];
-                return TvCard(tv);
-              },
-              itemCount: data.watchlistTv.length,
-            );
-          } else {
-            return Center(
-              key: Key('error_message'),
-              child: Text(data.message),
-            );
-          }
-        },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Watchlist'),
       ),
-      // ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Consumer<TvWatchlistNotifier>(
+          builder: (context, data, child) {
+            if (data.watchlistTvState == RequestState.Loading) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            } else if (data.watchlistTvState == RequestState.Loaded) {
+              return ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  final tv = data.watchlistTv[index];
+                  return TvCard(tv);
+                },
+                itemCount: data.watchlistTv.length,
+              );
+            } else {
+              return Center(
+                key: Key('error_message'),
+                child: Text(data.message),
+              );
+            }
+          },
+        ),
+        // ),
+      ),
     );
   }
 

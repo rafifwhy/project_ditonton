@@ -106,6 +106,10 @@ class DetailTvContent extends StatelessWidget {
                               tvDetail.name,
                               style: kHeading5,
                             ),
+                            Text(
+                              tvDetail.firstAirDate,
+                              style: kHeading6,
+                            ),
                             ElevatedButton(
                               onPressed: () async {
                                 if (!isTvAddedToWatchlist) {

@@ -27,7 +27,7 @@ class DatabaseHelper {
 
   Future<Database> _initDb() async {
     final path = await getDatabasesPath();
-    final databasePath = '$path/ditontonv2.db';
+    final databasePath = '$path/core_db.db';
 
     var db = await openDatabase(databasePath, version: 1, onCreate: _onCreate);
     return db;

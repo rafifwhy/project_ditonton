@@ -7,6 +7,7 @@ import 'package:ditonton/presentation/pages/movie/popular_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/search_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/top_rated_movies_page.dart';
+import 'package:ditonton/presentation/pages/tv_series/home_tv_page.dart';
 import 'package:ditonton/presentation/provider/movie/movie_list_notifier.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ListTile(
               leading: Icon(Icons.tv),
               title: Text('TV Series'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, HomeTvPage.ROUTE_NAME);
+              },
             ),
             ListTile(
               leading: Icon(Icons.save_alt),

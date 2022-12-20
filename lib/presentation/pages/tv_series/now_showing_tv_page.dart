@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '../../../common/state_enum.dart';
 
 class NowShowingTvPage extends StatefulWidget {
-  static const ROUTE_NAME = '/onair-tv-series';
+  static const ROUTE_NAME = '/now-showing-tv';
 
   const NowShowingTvPage({Key? key}) : super(key: key);
 
